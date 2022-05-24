@@ -15,11 +15,6 @@
     "**/*.spec.js",
     "**/*.test.jsx",
     "**/*.spec.jsx",
-    "**/*.d.ts",
-    "../react-template-e2e/src/integration/ThisOne.test.tsx"
-  ],
-  "files": [
-    "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
-    "../../node_modules/@nrwl/react/typings/image.d.ts"
+    "**/*.d.ts"
   ]
 }

@@ -1,0 +1,13 @@
+/// <reference types="jest" />
+
+import { {{camelCase name}} } from './{{camelCase name}}';
+
+jest.mock("./{{camelCase name}}", () => ({
+  {{camelCase name}}: () => true
+}));
+
+describe('{{camelCase name}} test', () => {
+  it('exists', () => {
+   expect({{camelCase name}}).toBeDefined();
+  })
+})

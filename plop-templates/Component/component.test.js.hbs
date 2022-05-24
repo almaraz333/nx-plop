@@ -1,0 +1,7 @@
+describe('{{pascalCase name}} component', () => {
+  beforeEach(() => cy.visit(`/iframe.html?id={{lowerCase name}}--primary`));
+
+    it('should render the component', () => {
+      cy.contains("{{pascalCase name}}");
+    });
+});

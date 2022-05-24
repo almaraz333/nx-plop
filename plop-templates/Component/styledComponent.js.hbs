@@ -1,0 +1,11 @@
+import { {{ pascalCase name }}Props} from './types'
+import { Styled{{pascalCase name}} } from './{{pascalCase name}}Styles'
+
+
+export const {{pascalCase name}}: React.FC<{{pascalCase name}}Props> = () => {
+  return (
+    <Styled{{pascalCase name}}>
+      {{pascalCase name}}
+    </Styled{{pascalCase name}}>
+  );
+};

@@ -19,11 +19,5 @@
     "**/*.spec.jsx",
     "**/*.test.jsx"
   ],
-  "include": [
-    "**/*.js",
-    "**/*.jsx",
-    "**/*.ts",
-    "**/*.tsx",
-    "../react-template-e2e/src/integration/ThisOne.test.tsx"
-  ]
+  "include": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"]
 }
