@@ -77,6 +77,14 @@
         "jestConfig": "apps/react-template/jest.config.ts",
         "passWithNoTests": true
       }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/react-template/**/*.css"],
+        "formatter": "json"
+      }
     }
   },
   "tags": []

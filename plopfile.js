@@ -35,7 +35,7 @@ module.exports = (plop) => {
         message: 'What is the components name?',
       },
       {
-        type: 'input',
+        type: 'confirm',
         name: 'isStyledComponent',
         message: 'Is this a styled component?',
       },
