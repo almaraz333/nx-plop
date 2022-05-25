@@ -1,7 +1,7 @@
-const ComponentPlop = require('./plopConfigs/componentPlopFile');
-const ViewPlop = require('./plopConfigs/viewPlopFile');
-const UtilPlop = require('./plopConfigs/utilPlopFile');
-const HookPlop = require('./plopConfigs/hookPlopFile');
+const ComponentPlop = require('./plop-configs/componentPlopFile');
+const ViewPlop = require('./plop-configs/viewPlopFile');
+const UtilPlop = require('./plop-configs/utilPlopFile');
+const HookPlop = require('./plop-configs/hookPlopFile');
 
 module.exports = (plop) => {
   plop.setGenerator('Component', ComponentPlop);
