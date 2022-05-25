@@ -6,6 +6,10 @@ This project was generated using [Nx](https://nx.dev).
 
 🔎 **Smart, Fast and Extensible Build System**
 
+## What is this for?
+
+### This repo is for maintaining a react-centered mono-repo. It includes plop to generate custom files for apps and libraries and Husky to ensure all tests and linting pass before a git push is successful.
+
 ## Commands
 
 - "npm test"
@@ -16,14 +20,14 @@ This project was generated using [Nx](https://nx.dev).
 - "generate-react-app --name=APP_NAME"
   - Generates a fresh React app
   - **Use this instead of the built in app generator**
+- "npx nx run LIBRARY_NAME:storybook"
+  - Runs Storybook for the specified library
 - "npm run generate"
   - Runs plop to generate a new component, view, hook, or util depending on input
   - Components are generated in the app/library chosen with a types, style, test, and index file
   - Views are only generated in apps with a sass, and index file. A test file is generated in the e2e folder for that app
   - Hooks are only generated in apps with a types and test file
   - Utils are only generated in apps with a types and test file
-- "npx nx run LIBRARY_NAME:storybook"
-  - Runs Storybook for the specified library
 
 ## Recommend to install Nx console in VS Code
 
