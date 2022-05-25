@@ -4,7 +4,6 @@
   "projects": {
     "react-template": "apps/react-template",
     "react-template-e2e": "apps/react-template-e2e",
-    "shared-ui": "libs/shared-ui",
-    "test": "libs/test"
+    "shared-ui": "libs/shared-ui"
   }
 }

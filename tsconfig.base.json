@@ -15,8 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ey-studio-pdx/shared-ui": ["libs/shared-ui/src/index.ts"],
-      "@ey-studio-pdx/test": ["libs/test/src/index.ts"]
+      "@ey-studio-pdx/shared-ui": ["libs/shared-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
