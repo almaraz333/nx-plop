@@ -1,5 +1,3 @@
-
-
 # EyStudioPdx
 
 This project was generated using [Nx](https://nx.dev).
@@ -7,6 +5,27 @@ This project was generated using [Nx](https://nx.dev).
 <p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
 
 🔎 **Smart, Fast and Extensible Build System**
+
+## Commands
+
+- "npm test"
+  - Runs all tests for every app and library
+- "npm run generate-react-lib --name=LIB_NAME"
+  - Generates a React library with Storybook
+  - **Use this instead of the built in library generator**
+- "generate-react-app --name=APP_NAME"
+  - Generates a fresh React app
+  - **Use this instead of the built in app generator**
+- "npm run generate"
+  - Runs plop to generate a new component, view, hook, or util depending on input
+  - Components are generated in the app/library chosen with a types, style, test, and index file
+  - Views are only generated in apps with a sass, and index file. A test file is generated in the e2e folder for that app
+  - Hooks are only generated in apps with a types and test file
+  - Utils are only generated in apps with a types and test file
+- "npx nx run LIBRARY_NAME:storybook"
+  - Runs Storybook for the specified library
+
+## Recommend to install Nx console in VS Code
 
 ## Adding capabilities to your workspace
 
@@ -78,8 +97,6 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
-
-
 
 ## ☁ Nx Cloud
 
