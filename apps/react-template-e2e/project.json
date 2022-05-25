@@ -21,6 +21,18 @@
       "options": {
         "lintFilePatterns": ["apps/react-template-e2e/**/*.{js,ts}"]
       }
+    },
+    "test": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/react-template-e2e/cypress.json",
+        "devServerTarget": "react-template:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "react-template:serve:production"
+        }
+      }
     }
   },
   "tags": [],

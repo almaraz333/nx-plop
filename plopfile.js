@@ -6,7 +6,6 @@ const getDirectories = (source) =>
     .map((dirent) => dirent.name);
 
 module.exports = (plop) => {
-  let componentDestinationType;
   plop.setGenerator('Component', {
     description: 'Create a reusable component',
     prompts: [
@@ -40,7 +39,7 @@ module.exports = (plop) => {
         message: 'Is this a styled component?',
       },
     ],
-    actions: function (data) {
+    actions: (data) => {
       const pathPrefix =
         data.isLibOrApp === 'Library'
           ? `./libs/${data.componentDestination}/src/lib`
@@ -50,7 +49,7 @@ module.exports = (plop) => {
         {
           type: 'add',
           path: `${pathPrefix}/components/{{pascalCase name}}/index.ts`,
-          templateFile: 'plop-templates/Component/index.js.hbs',
+          templateFile: 'plop-templates/indexExport.js.hbs',
         },
         {
           type: 'add',
@@ -108,6 +107,66 @@ module.exports = (plop) => {
           templateFile: 'plop-templates/Component/component.js.hbs',
         });
       }
+
+      return actions;
+    },
+  });
+
+  plop.setGenerator('View', {
+    description: 'Create a view',
+    prompts: [
+      {
+        type: 'list',
+        name: 'componentDestination',
+        message: 'Where should this view be placed?',
+        choices: () => [
+          ...getDirectories('./apps').filter(
+            (choice) => !choice.includes('e2e')
+          ),
+        ],
+      },
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is the views name?',
+      },
+    ],
+    actions: (data) => {
+      const pathPrefix = `./apps/${data.componentDestination}/src/app`;
+      let actions = [
+        {
+          type: 'add',
+          path: `${pathPrefix}/views/index.ts`,
+          templateFile: 'plop-templates/index.js.hbs',
+          skipIfExists: true,
+        },
+        {
+          type: 'add',
+          path: `${pathPrefix}/views/{{pascalCase name}}/{{pascalCase name}}.tsx`,
+          templateFile: 'plop-templates/View/view.js.hbs',
+        },
+        {
+          type: 'add',
+          path: `${pathPrefix}/views/{{pascalCase name}}/{{pascalCase name}}.scss`,
+          templateFile: 'plop-templates/View/styles.scss.hbs',
+        },
+        {
+          type: 'add',
+          path: `${pathPrefix}/views/{{pascalCase name}}/index.ts`,
+          templateFile: 'plop-templates/indexExport.js.hbs',
+        },
+        {
+          type: 'add',
+          path: `./apps/${data.componentDestination}-e2e/src/integration/{{pascalCase name}}/{{pascalCase name}}.spec.ts`,
+          templateFile: 'plop-templates/View/view.spec.hbs',
+        },
+        {
+          type: 'append',
+          path: `${pathPrefix}/views/index.ts`,
+          pattern: `/* PLOP_INJECT_EXPORT */`,
+          template: `export { {{pascalCase name}} } from './{{pascalCase name}}';`,
+        },
+      ];
 
       return actions;
     },

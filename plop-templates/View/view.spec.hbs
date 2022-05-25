@@ -1,0 +1,7 @@
+describe('{{componentDestination}}: {{pascalCase name}} component', () => {
+    beforeEach(() => cy.visit('/{{lowerCase name}}'));
+
+      it('should render the view', () => {
+        cy.contains('{{pascalCase name}}');
+      });
+  });
