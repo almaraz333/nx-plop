@@ -1,2 +1,2 @@
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface Test2Props {};
+export interface Test3Props {};

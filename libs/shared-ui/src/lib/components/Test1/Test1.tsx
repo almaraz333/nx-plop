@@ -1,11 +1,10 @@
-import { Test1Props} from './types'
-import { StyledTest1 } from './Test1Styles'
-
+import { Test1Props } from './types';
 
 export const Test1: React.FC<Test1Props> = () => {
   return (
-    <StyledTest1>
+    <>
       Test1
-    </StyledTest1>
+      <input type="text" onChange={() => console.log('yo sd')} />
+    </>
   );
 };

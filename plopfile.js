@@ -49,11 +49,6 @@ module.exports = (plop) => {
       let actions = [
         {
           type: 'add',
-          path: `./apps/${data.componentDestination}-e2e/src/integration/{{pascalCase name}}/{{pascalCase name}}.spec.ts`,
-          templateFile: 'plop-templates/Component/component.test.js.hbs',
-        },
-        {
-          type: 'add',
           path: `${pathPrefix}/components/{{pascalCase name}}/index.ts`,
           templateFile: 'plop-templates/Component/index.js.hbs',
         },
@@ -75,6 +70,23 @@ module.exports = (plop) => {
           template: `export { {{pascalCase name}} } from './{{pascalCase name}}';`,
         },
       ];
+
+      switch (data.isLibOrApp) {
+        case 'Library':
+          actions.push({
+            type: 'add',
+            path: `${pathPrefix}/components/{{pascalCase name}}/{{pascalCase name}}.stories.tsx`,
+            templateFile: 'plop-templates/Component/componentStory.js.hbs',
+          });
+          break;
+        case 'App':
+          actions.push({
+            type: 'add',
+            path: `${pathPrefix}/components/{{pascalCase name}}/{{pascalCase name}}.spec.tsx`,
+            templateFile: 'plop-templates/Component/component.test.js.hbs',
+          });
+          break;
+      }
 
       if (data.isStyledComponent) {
         actions.push(

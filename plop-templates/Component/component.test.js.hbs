@@ -1,7 +1,10 @@
-describe('{{pascalCase name}} component', () => {
-  beforeEach(() => cy.visit(`/iframe.html?id={{lowerCase name}}--primary`));
+import { render } from '@testing-library/react';
 
-    it('should render the component', () => {
-      cy.contains("{{pascalCase name}}");
-    });
+import { {{pascalCase name}} } from './{{pascalCase name}}';
+
+describe('{{pascalCase name}}', () => {
+  it('should render successfully', () => {
+    const { baseElement } = render(<{{pascalCase name}} />);
+    expect(baseElement).toBeTruthy();
+  });
 });
