@@ -1,7 +1,6 @@
-describe('{{componentDestination}}: {{pascalCase name}} component', () => {
-    beforeEach(() => cy.visit('/{{lowerCase name}}'));
-
-      it('should render the view', () => {
-        cy.contains('{{pascalCase name}}');
-      });
+describe('test-app:{{name}} component', () => {
+  beforeEach(() => cy.visit('/URL-HERE'));
+  it('should render the view', () => {
+    cy.contains('{{name}}');
   });
+});

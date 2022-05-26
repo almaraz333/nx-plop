@@ -28,7 +28,7 @@ module.exports = {
     let actions = [
       {
         type: 'add',
-        path: `${pathPrefix}/utils/{{camelCase name}}/{{camelCase name}}.ts`,
+        path: `${pathPrefix}/utils/{{ name}}/{{ name}}.ts`,
         templateFile: 'plop-templates/Util/util.js.hbs',
       },
       {
@@ -41,21 +41,21 @@ module.exports = {
         type: 'append',
         path: `${pathPrefix}/utils/index.ts`,
         pattern: `/* PLOP_INJECT_EXPORT */`,
-        template: `export { {{camelCase name}} } from './{{camelCase name}}';`,
+        template: `export { {{ name}} } from './{{ name}}';`,
       },
       {
         type: 'add',
-        path: `${pathPrefix}/utils/{{camelCase name}}/{{camelCase name}}.spec.ts`,
+        path: `${pathPrefix}/utils/{{ name}}/{{ name}}.spec.ts`,
         templateFile: 'plop-templates/Util/util.spec.js.hbs',
       },
       {
         type: 'add',
-        path: `${pathPrefix}/utils/{{camelCase name}}/index.ts`,
+        path: `${pathPrefix}/utils/{{ name}}/index.ts`,
         templateFile: 'plop-templates/Util/index.js.hbs',
       },
       {
         type: 'add',
-        path: `${pathPrefix}/utils/{{camelCase name}}/types.ts`,
+        path: `${pathPrefix}/utils/{{ name}}/types.ts`,
         templateFile: 'plop-templates/Util/types.js.hbs',
       },
     ];

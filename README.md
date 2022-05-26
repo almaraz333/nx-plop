@@ -14,11 +14,13 @@ This project was generated using [Nx](https://nx.dev).
 
 - "npm test"
   - Runs all tests for every app and library
-- "npm run generate-react-lib --name=LIB_NAME"
+- "npm run generate-react-lib --name=LIB-NAME"
   - Generates a React library with Storybook
+  - Name must be separated by a dash
   - **Use this instead of the built in library generator**
-- "generate-react-app --name=APP_NAME"
+- "generate-react-app --name=APP-NAME"
   - Generates a fresh React app
+  - Name must be separated by a dash
   - **Use this instead of the built in app generator**
 - "npx nx run LIBRARY_NAME:storybook"
   - Runs Storybook for the specified library

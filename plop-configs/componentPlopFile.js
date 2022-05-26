@@ -47,12 +47,12 @@ module.exports = {
     let actions = [
       {
         type: 'add',
-        path: `${pathPrefix}/components/{{pascalCase name}}/index.ts`,
+        path: `${pathPrefix}/components/{{ name}}/index.ts`,
         templateFile: 'plop-templates/indexExport.js.hbs',
       },
       {
         type: 'add',
-        path: `${pathPrefix}/components/{{pascalCase name}}/types.ts`,
+        path: `${pathPrefix}/components/{{ name}}/types.ts`,
         templateFile: 'plop-templates/Component/types.js.hbs',
       },
       {
@@ -65,7 +65,7 @@ module.exports = {
         type: 'append',
         path: `${pathPrefix}/components/index.ts`,
         pattern: `/* PLOP_INJECT_EXPORT */`,
-        template: `export { {{pascalCase name}} } from './{{pascalCase name}}';`,
+        template: `export { {{ name}} } from './{{ name}}';`,
       },
     ];
 
@@ -73,14 +73,28 @@ module.exports = {
       case 'Library':
         actions.push({
           type: 'add',
-          path: `${pathPrefix}/components/{{pascalCase name}}/{{pascalCase name}}.stories.tsx`,
+          path: `${pathPrefix}/components/{{ name}}/{{ name}}.stories.tsx`,
           templateFile: 'plop-templates/Component/componentStory.js.hbs',
+        });
+        actions.push({
+          type: 'add',
+          path: `./libs/${data.componentDestination}/src/index.ts`,
+          force: true,
+          templateFile:
+            'plop-templates/Component/componentLibraryExport.js.hbs',
+        });
+        actions.push({
+          type: 'add',
+          path: `./libs/${data.componentDestination}/src/lib/index.ts`,
+          force: true,
+          templateFile:
+            'plop-templates/Component/componentLibraryComponentsExport.js.hbs',
         });
         break;
       case 'App':
         actions.push({
           type: 'add',
-          path: `${pathPrefix}/components/{{pascalCase name}}/{{pascalCase name}}.spec.tsx`,
+          path: `${pathPrefix}/components/{{ name}}/{{ name}}.spec.tsx`,
           templateFile: 'plop-templates/Component/component.test.js.hbs',
         });
         break;
@@ -90,19 +104,19 @@ module.exports = {
       actions.push(
         {
           type: 'add',
-          path: `${pathPrefix}/components/{{pascalCase name}}/{{pascalCase name}}.tsx`,
+          path: `${pathPrefix}/components/{{ name}}/{{ name}}.tsx`,
           templateFile: 'plop-templates/Component/styledComponent.js.hbs',
         },
         {
           type: 'add',
-          path: `${pathPrefix}/components/{{pascalCase name}}/{{pascalCase name}}Styles.tsx`,
+          path: `${pathPrefix}/components/{{ name}}/{{ name}}Styles.tsx`,
           templateFile: 'plop-templates/Component/componentStyles.js.hbs',
         }
       );
     } else {
       actions.push({
         type: 'add',
-        path: `${pathPrefix}/components/{{pascalCase name}}/{{pascalCase name}}.tsx`,
+        path: `${pathPrefix}/components/{{ name}}/{{ name}}.tsx`,
         templateFile: 'plop-templates/Component/component.js.hbs',
       });
     }

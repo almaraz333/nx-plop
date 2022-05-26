@@ -5,11 +5,12 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx run-many --all --target=test --parallel --verbose",
+    "e2e": "nx run-many --all --target=e2e --verbose --parallel=1",
+    "test": "nx run-many --all --target=test --verbose",
     "generate": "plop",
     "prepare": "husky install",
     "lint": "stylelint './apps/**/*.{js,jsx,ts,tsx}'",
-    "generate-react-lib": "npx nx generate @nrwl/react:library $npm_config_name --no-component --pascalCaseFiles --no-interactive &&  npx nx generate @nrwl/react:storybook-configuration $npm_config_name --no-configureCypress --no-generateCypressSpecs --no-generateStories --no-interactive",
+    "generate-react-library": "npx nx generate @nrwl/react:library $npm_config_name --no-component --pascalCaseFiles --no-interactive &&  npx nx generate @nrwl/react:storybook-configuration $npm_config_name --no-configureCypress --no-generateCypressSpecs --no-generateStories --no-interactive",
     "generate-react-app": "npx nx generate @nrwl/react:application $npm_config_name --pascalCaseFiles --no-interactive"
   },
   "private": true,

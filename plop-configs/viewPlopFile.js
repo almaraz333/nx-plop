@@ -33,29 +33,29 @@ module.exports = {
       },
       {
         type: 'add',
-        path: `${pathPrefix}/views/{{pascalCase name}}/{{pascalCase name}}.tsx`,
+        path: `${pathPrefix}/views/{{ name}}/{{ name}}.tsx`,
         templateFile: 'plop-templates/View/view.js.hbs',
       },
       {
         type: 'add',
-        path: `${pathPrefix}/views/{{pascalCase name}}/styles.scss`,
+        path: `${pathPrefix}/views/{{ name}}/styles.scss`,
         templateFile: 'plop-templates/View/styles.scss.hbs',
       },
       {
         type: 'add',
-        path: `${pathPrefix}/views/{{pascalCase name}}/index.ts`,
+        path: `${pathPrefix}/views/{{ name}}/index.ts`,
         templateFile: 'plop-templates/indexExport.js.hbs',
       },
       {
         type: 'add',
-        path: `./apps/${data.componentDestination}-e2e/src/integration/{{pascalCase name}}/{{pascalCase name}}.spec.ts`,
+        path: `./apps/${data.componentDestination}-e2e/src/integration/{{ name}}/{{ name}}.spec.ts`,
         templateFile: 'plop-templates/View/view.spec.hbs',
       },
       {
         type: 'append',
         path: `${pathPrefix}/views/index.ts`,
         pattern: `/* PLOP_INJECT_EXPORT */`,
-        template: `export { {{pascalCase name}} } from './{{pascalCase name}}';`,
+        template: `export { {{ name}} } from './{{ name}}';`,
       },
     ];
 
