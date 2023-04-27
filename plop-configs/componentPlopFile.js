@@ -32,11 +32,6 @@ module.exports = {
       name: 'name',
       message: 'What is the components name?',
     },
-    {
-      type: 'confirm',
-      name: 'isStyledComponent',
-      message: 'Is this a styled component?',
-    },
   ],
   actions: (data) => {
     const pathPrefix =
@@ -100,26 +95,19 @@ module.exports = {
         break;
     }
 
-    if (data.isStyledComponent) {
       actions.push(
         {
           type: 'add',
-          path: `${pathPrefix}/components/{{ name}}/{{ name}}.tsx`,
-          templateFile: 'plop-templates/Component/styledComponent.js.hbs',
-        },
-        {
-          type: 'add',
-          path: `${pathPrefix}/components/{{ name}}/{{ name}}Styles.tsx`,
-          templateFile: 'plop-templates/Component/componentStyles.js.hbs',
+          path: `${pathPrefix}/components/{{ name}}/{{ name}}.module.scss`,
+          templateFile: 'plop-templates/Component/styles.js.hbs',
         }
       );
-    } else {
+
       actions.push({
         type: 'add',
         path: `${pathPrefix}/components/{{ name}}/{{ name}}.tsx`,
         templateFile: 'plop-templates/Component/component.js.hbs',
       });
-    }
 
     return actions;
   },

@@ -38,7 +38,7 @@ module.exports = {
       },
       {
         type: 'add',
-        path: `${pathPrefix}/views/{{ name}}/styles.scss`,
+        path: `${pathPrefix}/views/{{ name}}/{{ name}}.module.scss`,
         templateFile: 'plop-templates/View/styles.scss.hbs',
       },
       {
