@@ -41,15 +41,15 @@
   "generators": {
     "@nrwl/react": {
       "application": {
-        "style": "styled-components",
+        "style": "sass",
         "linter": "eslint",
         "babel": true
       },
       "component": {
-        "style": "styled-components"
+        "style": "sass"
       },
       "library": {
-        "style": "styled-components",
+        "style": "sass",
         "linter": "eslint"
       }
     }
